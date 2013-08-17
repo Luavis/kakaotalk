@@ -18,37 +18,44 @@ Before you use this module, you have to make a KakaoTalk account first. Then, yo
 
 	kakao.duuid = ''
 	kakao.sKey = ''
-	kakao.user\_id = ''
+	kakao.user_id = ''
 
-### Commands ###
+### After you prepared ###
 
 There are various kinds of commands in LOCO protocol like 'login', 'write', 'read', 'buy', 'checkin' etc. Before you freely use these commands, you have to follow two steps to make proper connection with LOCO server.
 
 1. Send 'checkin' command to get LOCO server info about host and port to communicate.
 
-	document = checkin()
+		document = checkin()
 
-	host = document['host']
-	port = document['port']
+		host = document['host']
+		port = document['port']
 
 2. Send handshake socket with 'login' command to LOCO server with encryption info.
 
-	h = hand()
-	l = login()
-	enc_l = enc_aes(l)
-	command = struct.pack('I',len(enc_l)) + enc_l
+		h = hand()
+		l = login()
+		enc_l = enc_aes(l)
+		command = struct.pack('I',len(enc_l)) + enc_l
+	
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s.connect((str(host),port))
+		s.settimeout(5)
+	
+		s.send(h + command)
+		reply = s.recv(40960)
 
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.connect((str(host),port))
-	s.settimeout(5)
-
-	s.send(h + command)
-	reply = s.recv(40960)
-
-Instead of those lines, you can just simply use start() :) For example:
+Instead of using those codes, you can just simply use start() :) For example:
 
 	s = kakao.start()
 	suc = kakao.write(s, chatId, "(하트)")
+	
+### Commands ###
+
+- `buy` : get LOCO server information(HOST,PORT) from KakaoTalk
+- `checkin` : literaly check in to the LOCO server.
+- `cwrite` : create chat room and send message
+- `write` : send message
 
 ## Application example ##
 
