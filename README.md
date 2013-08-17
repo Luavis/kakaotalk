@@ -13,13 +13,13 @@ You can install fbconsole using pip:
 
 ### Requirement ###
 
-Before you use this module, you have to make a KakaoTalk account first. Then, you have to find out 'duuid', 'sKey', and 'user\_id' for your KakaoTalk account. If you need some help to extract those info from your accoun, see [this post](http://www.bpak.org/blog/2011/06/kakaotalk-bypassing-ssl-2/). When you prepared with this information, you need to specify these to module. For example:
+Before you use this module, you need a KakaoTalk account. Then, you have to find out 'duuid', 'sKey', and 'user_id' for your KakaoTalk account. If you need some help to extract those info from your accoun, see [this post](http://www.bpak.org/blog/2011/06/kakaotalk-bypassing-ssl-2/). When you prepared with this information, you need to specify these info to module. For example:
 
 	from kakaotalk import kakaotalk as kakao
 
-	kakao.duuid = ''
-	kakao.sKey = ''
-	kakao.user_id = ''
+	kakao.duuid = 'YOUR_DUUID'
+	kakao.sKey = 'YOUR_SKEY'
+	kakao.user_id = 'YOUR_USER_ID'
 
 ### After you prepared ###
 
