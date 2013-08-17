@@ -3,7 +3,7 @@
  
 kakaotalk module is a python wrapper for LOCO protocol.
 
-You can install module using pip:
+You can install this module using pip:
 
 	pip install kakaotalk
 	easy_install kakaotalk
