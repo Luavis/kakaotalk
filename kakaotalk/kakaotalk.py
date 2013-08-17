@@ -371,7 +371,7 @@ def upseen(s, chatId):
     return succ
 
 #[READ] {u'since': 0L, u'chatId': }
-def read(s, chatId = chatId):
+def read(s, chatId):
     print " [*] READ from " + str(chatId)
 
     data = '\x06\x00\x00\x00' # Packet ID
