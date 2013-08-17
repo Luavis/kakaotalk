@@ -425,26 +425,6 @@ def write_pic(s, chatId = 42865071710223L, url = "", width = 800, height = 600):
     succ = command_send(s, data)
     return succ
 
-def write_thumb(s, chatId, msg = u'', url = ''):
-    print " [*] WRITE THUMBNAIL to " + str(chatId) + " : " + url
-
-    data = '\x06\x00\x00\x00' # Packet ID
-    data += '\x00\x00' # Status Code : when sending command -> 0
-    data += 'WRITE\x00\x00\x00\x00\x00\x00' # Method
-    data += '\x00' # Body Type : when sending command -> 0
-
-    if url.find('gif') is -1:
-        t = 12
-    else:
-        t = 6
-    body = BSON.encode({u'msg': msg, u'extra': u'{\r\n "path": "'+url+u'",\r\n "width": 120,\r\n  "height": 120,\r\n  "name": "(Designed by carpedm20)",\r\n  "sound": null,\r\n  "msg": null,\r\n  "lat": null,\r\n  "log": null,\r\n  "keyword": null\r\n}', u'type': t, u'chatId': chatId})
-
-    data += body[:4]
-    data += body
-
-    succ = command_send(s, data)
-    return succ
-
 def encode_multipart_formdata(fields, files):
     BOUNDARY = "httphelper--multipartboundary--635103678186870000"
     CRLF = '\r\n'
