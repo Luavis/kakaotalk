@@ -2,7 +2,7 @@
 
 This library provides a pure Python interface for the LOCO protocol which is the private protocol of KakaoTalk.
 
-You need to know the sKey and duuid of your current account before you test the commands.
+You need to know the sKey, duuid and user_id of your current account before you test the commands.
 
 Copyright 2013 Taehoon Kim <carpedm20@gmail.com>
 
