@@ -13,7 +13,7 @@ You can install module using pip:
 
 ### Requirement ###
 
-Before you use this module, you need a KakaoTalk account. Then, you have to find out 'duuid', 'sKey', and 'user_id' for your KakaoTalk account. If you need some help to extract those info from your accoun, see [this post](http://www.bpak.org/blog/2011/06/kakaotalk-bypassing-ssl-2/). When you prepared with this information, you need to specify these info to module. For example:
+First of all, you need a KakaoTalk account. Then, you have to find out 'duuid', 'sKey', and 'user_id' for your KakaoTalk account. If you need some help to extract these info from your account, see [this post](http://www.bpak.org/blog/2011/06/kakaotalk-bypassing-ssl-2/). When you are prepared, you need to specify these info to kakaotalk module. For example:
 
 	from kakaotalk import kakaotalk as kakao
 
@@ -23,9 +23,9 @@ Before you use this module, you need a KakaoTalk account. Then, you have to find
 
 ### After you prepared ###
 
-There are various kinds of commands in LOCO protocol like 'login', 'write', 'read', 'buy', 'checkin' etc. Before you freely use these commands, you have to follow two steps to make proper connection with LOCO server.
+There are various kinds of commands in LOCO protocol like 'login', 'write', 'read', 'buy', 'checkin' etc. To use these commands freely, you have to follow two steps to make proper connection with LOCO server.
 
-1. Send 'checkin' command to get LOCO server info about host and port to communicate.
+1. First, send 'checkin' command to get LOCO server info (host and port) to communicate.
 
 		document = checkin()
 
@@ -46,7 +46,7 @@ There are various kinds of commands in LOCO protocol like 'login', 'write', 'rea
 		s.send(h + command)
 		reply = s.recv(40960)
 
-Instead of using those codes, you can just simply use start() :) For example:
+Instead of using those codes, you can just simply use start() function :) For example:
 
 	s = kakao.start()
 	suc = kakao.write(s, chatId, "(하트)")
