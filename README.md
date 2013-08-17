@@ -6,6 +6,7 @@ kakaotalk module is a python wrapper for LOCO protocol.
 You can install fbconsole using pip:
 
 	pip install kakaotalk
+	easy_install kakaotalk
 
 ## Quick Start Guide ##
 
