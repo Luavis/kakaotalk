@@ -67,7 +67,7 @@ Instead of using those codes, you can just simply use start() :) For example:
 
 ## Application example ##
 
-[HeXA Bot](http://goo.gl/9k6uC8)
+[HeXA Bot](http://carpedm20.blogspot.kr/2013/08/blog-post.html)
 
 ## Feedback ##
 
