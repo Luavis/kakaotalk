@@ -53,9 +53,17 @@ Instead of using those codes, you can just simply use start() :) For example:
 ### Commands ###
 
 - `buy` : get LOCO server information(HOST,PORT) from KakaoTalk
-- `checkin` : literaly check in to the LOCO server.
+- `checkin` : literaly check in to the LOCO server
 - `cwrite` : create chat room and send message
-- `write` : send message
+- `write` : send message to specific chat room
+- `hand` : handshake command which contains encryption information
+- `login` : notify to LOCO server that you will use commands (not sure)
+- `chaton` : notify to LOCO server that you will start to chat with specific chat room
+- `nchatlist` : get chat room list from LOCO server (not sure)
+- `leave` : leave the specific chat room
+- `ping` : send ping to server that notify you are still alive
+- `upseen` : notify that you are checked specific chat room
+- `read` : get chat room list and info from server
 
 ## Application example ##
 
